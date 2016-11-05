@@ -92,9 +92,9 @@ class Converter:
 
         for i in range(repetitions):
             if self.conf.getboolean("TeXing","verbose output"):
-                rc = subprocess.call(["pdflatex", "-halt-on-error", texfile])
+                rc = subprocess.call(["xelatex", "-halt-on-error", texfile])
             else:
-                rc = subprocess.call(["pdflatex", "-halt-on-error", texfile], 
+                rc = subprocess.call(["xelatex", "-halt-on-error", texfile], 
                                      stdout=subprocess.DEVNULL)
 
 
@@ -102,9 +102,9 @@ class Converter:
         # TODO: This needs to be done better.
         if not os.path.isfile(pdffile):
             rerun = input("Oh snap! Something went wrong when creating the PDF.\n"
-                          "Do you want to run pdflatex again, this time with output? (y/[n])")
+                          "Do you want to run xelatex again, this time with output? (y/[n])")
             if rerun == 'y':
-                rc = subprocess.call(["pdflatex", texfile]) 
+                rc = subprocess.call(["xelatex", texfile]) 
 
 
 

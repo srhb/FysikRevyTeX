@@ -14,10 +14,6 @@ class Material:
     def __init__(self, info_dict):
         "Extract data from dictionary returned by parsetexfile()."
         self.title = info_dict["title"]
-        try:
-            self.status = info_dict["status"]
-        except KeyError:
-            print("No status on '{}' is set.".format(self.title))
         self.props = info_dict["props"]
         self.length = info_dict["eta"].replace('$','').split()[0]
         self.path = os.path.abspath(info_dict["path"])

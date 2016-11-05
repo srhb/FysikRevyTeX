@@ -238,7 +238,7 @@ class TeX:
                     self.tex += "({melody}) ".format(melody=m.melody)
 
                 self.tex += """\\emph{{{revue_name} {revue_year}}}\\\\
-        \t\t\\small{{Status: {status}, \\emph{{Tidsestimat: {length} minutter}}}}\n""".format(revue_name=m.revue, revue_year=m.year, status=m.status, length=m.length)
+        \t\t\\small{{\\emph{{Tidsestimat: {length} minutter}}}}\n""".format(revue_name=m.revue, revue_year=m.year, length=m.length)
 
             self.tex += "\\end{enumerate}\n\n"
 
